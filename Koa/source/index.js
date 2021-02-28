@@ -9,6 +9,7 @@
 
 const KKB = require('./kkb')
 const Router = require('./router')
+const static = require('./static')
 
 const app = new KKB()
 const router = new Router()
@@ -44,5 +45,6 @@ router.post('/index', async ctx => {
 
 
 app.use(router.routers())
+app.use(static(__dirname + '/dist'))
 
 app.listen(3000)

@@ -1,4 +1,3 @@
-
 class Router {
   constructor() {
     this.routeStack = []
