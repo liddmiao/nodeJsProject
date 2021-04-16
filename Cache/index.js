@@ -35,6 +35,7 @@ http.createServer((req, res) => {
 
     // 以内容为判断基准，给内容生成一段hash，通过比对hash判断内容是否变化
     res.setHeader('Cache-control', 'no-cache')
+    res.setHeader('zidingyi', 'sssdfdsfdsafdsa')
     const hash = crypto.createHash('sha1').update(content).digest('hex')
     res.setHeader('Etag', hash)
     if (req.headers['if-none-match'] === hash) {

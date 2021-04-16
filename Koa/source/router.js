@@ -17,6 +17,7 @@ class Router {
     const stack = this.routeStack
     return async function (ctx, next) {
       let path = ctx.url
+      console.log(path)
       let route
       // 遍历stack，找到当前对应的handle
       for (let i = 0; i < stack.length; i++) {
