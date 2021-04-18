@@ -1,24 +1,28 @@
-module.exports = () => {
-  let stackItems = []
-  this.push = function (item) {
-    stackItems.push(item)
+class Stack{
+  constructor () {
+    this.stackItems = []
   }
-  this.pop = function () {
-    stackItems.pop()
+  push (item) {
+    this.stackItems.push(item)
   }
-  this.size = function () {
-    return stackItems.length
+  pop () {
+    return this.stackItems.pop()
   }
-  this.isEmpty = function () {
-    return stackItems.length === 0
+  size () {
+    return this.stackItems.length
   }
-  this.top = function () {
-    return stackItems[stackItems.length - 1]
+  isEmpty () {
+    return this.stackItems.length === 0
   }
-  this.bottom = function () {
-    return stackItems[0]
+  top () {
+    return this.stackItems[this.stackItems.length - 1]
   }
-  this.clear = function () {
-    stackItems = []
+  bottom () {
+    return this.stackItems[0]
+  }
+  clear () {
+    this.stackItems = []
   }
 }
+
+module.exports = Stack

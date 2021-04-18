@@ -6,7 +6,11 @@ class Queue {
     this.queueItems = arr
   }
   enqueue(data) {
-    this.queueItems.push(data)
+    if (Array.isArray(data)) {
+      this.queueItems.push(...data)
+    } else {
+      this.queueItems.push(data)
+    }
   }
   dequeue() {
     return this.queueItems.shift()
